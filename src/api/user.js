@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 
 export function login(data) {
-  debugger
+
   return request({
     url: '/fotic-admin-template/user/login',
     method: 'post',
