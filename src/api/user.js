@@ -1,8 +1,9 @@
 import request from '@/utils/request'
 
 export function login(data) {
+  debugger
   return request({
-    url: '/vue-admin-template/user/login',
+    url: '/fotic-admin-template/user/login',
     method: 'post',
     data
   })
@@ -10,7 +11,7 @@ export function login(data) {
 
 export function getInfo(token) {
   return request({
-    url: '/vue-admin-template/user/info',
+    url: '/fotic-admin-template/user/info',
     method: 'get',
     params: { token }
   })
@@ -18,7 +19,7 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/vue-admin-template/user/logout',
+    url: '/fotic-admin-template/user/logout',
     method: 'post'
   })
 }
