@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '统一运营管理平台',
+  title: '智能运营管理平台',
 
   /**
    * @type {boolean} true | false

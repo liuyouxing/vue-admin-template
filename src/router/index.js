@@ -54,7 +54,42 @@ export const constantRoutes = [
       meta: { title: '首页', icon: 'dashboard' }
     }]
   },
-
+  {
+    path: '/form',
+    component: Layout,
+    meta: { title: '项目', icon: 'form' },
+    children: [
+      {
+        path: 'project-pre',
+        name: 'project-pre',
+        component: () => import('@/views/form/project-pre'),
+        meta: { title: '项目初始化', icon: 'form' }
+      }, {
+        path: 'project-res',
+        name: 'project-res',
+        hidden: true,
+        component: () => import('@/views/form/project-res'),
+        meta: { title: '项目初始化', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/external-link',
+    component: Layout,
+    meta: { title: '页面集成', icon: 'link' },
+    children: [
+      {
+        path: 'inter-link',
+        name: 'inter-link',
+        component: () => import('@/views/frame/html/index'),
+        meta: { title: '可兼容', icon: 'link' }
+      },
+      {
+        path: 'http://10.7.76.13:8080/portal/skins/default/template5/portal.jsp',
+        meta: { title: '不兼容', icon: 'link' }
+      }
+    ]
+  },
   {
     path: '/example',
     component: Layout,
@@ -77,25 +112,7 @@ export const constantRoutes = [
     ]
   },
 
-  {
-    path: '/form',
-    component: Layout,
-    meta: { title: '项目', icon: 'form' },
-    children: [
-      {
-        path: 'project-pre',
-        name: 'project-pre',
-        component: () => import('@/views/form/project-pre'),
-        meta: { title: '项目初始化', icon: 'form' }
-      },{
-        path: 'project-res',
-        name: 'project-res',
-        hidden:true,
-        component: () => import('@/views/form/project-res'),
-        meta: { title: '项目初始化', icon: 'form'}
-      }
-    ]
-  },
+
 
   {
     path: '/nested',
@@ -156,16 +173,7 @@ export const constantRoutes = [
     ]
   },
 
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'http://www.fotic.com.cn/',
-        meta: { title: '外部链接', icon: 'link' }
-      }
-    ]
-  },
+
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
